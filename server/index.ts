@@ -83,14 +83,16 @@ nextApp.prepare().then(() => {
     try {
       const userPasswordHash = await bcrypt.hash('user123', 10)
       const adminPasswordHash = await bcrypt.hash('admin123', 10)
-      const pratikshaPasswordHash = await bcrypt.hash('pratikshasantosh', 10)
+      const pratikshaStorePasswordHash = await bcrypt.hash('Pratikshasantosh', 10)
+      const pratikshaComPasswordHash = await bcrypt.hash('Patikshasantosh', 10)
 
       const results = []
 
       // Seed users
       const existingUser = await db.select().from(users).where(eq(users.email, 'user@sanor.com'))
       const existingAdmin = await db.select().from(users).where(eq(users.email, 'admin@sanor.com'))
-      const existingPratiksha = await db.select().from(users).where(eq(users.email, 'pratiksha@sanor.store'))
+      const existingPratikshaStore = await db.select().from(users).where(eq(users.email, 'pratiksha@sanor.store'))
+      const existingPratikshaCom = await db.select().from(users).where(eq(users.email, 'pratiksha@sanor.com'))
 
       if (existingUser.length === 0) {
         await db.insert(users).values({
@@ -112,14 +114,29 @@ nextApp.prepare().then(() => {
         results.push('Admin created: admin@sanor.com')
       }
 
-      if (existingPratiksha.length === 0) {
+      if (existingPratikshaStore.length === 0) {
         await db.insert(users).values({
           email: 'pratiksha@sanor.store',
-          name: 'Pratiksha',
-          passwordHash: pratikshaPasswordHash,
+          name: 'Pratiksha Store',
+          passwordHash: pratikshaStorePasswordHash,
           role: 'admin',
         })
         results.push('User created: pratiksha@sanor.store')
+      } else {
+        await db.update(users)
+          .set({ passwordHash: pratikshaStorePasswordHash })
+          .where(eq(users.email, 'pratiksha@sanor.store'))
+        results.push('User updated: pratiksha@sanor.store')
+      }
+
+      if (existingPratikshaCom.length === 0) {
+        await db.insert(users).values({
+          email: 'pratiksha@sanor.com',
+          name: 'Pratiksha Com',
+          passwordHash: pratikshaComPasswordHash,
+          role: 'admin',
+        })
+        results.push('User created: pratiksha@sanor.com')
       }
 
       // Seed categories with unique images

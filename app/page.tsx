@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ShoppingBag, Heart, ChevronRight, Star, Sparkles, Loader2, Percent, Truck, Shield, Clock } from 'lucide-react'
 import Navbar from '@/components/Navbar'
+import HeroCarousel from '@/components/HeroCarousel'
 import { useAuth } from '@/context/AuthContext'
 import { useCart } from '@/context/CartContext'
 import { productsApi, categoriesApi } from '@/lib/api'
@@ -87,7 +88,7 @@ export default function Home() {
 
   // Show Home Page when logged in
   return (
-    <LoggedInHomePage 
+    <LoggedInHomePage
       products={products}
       categories={categories}
       loading={loading}
@@ -265,7 +266,7 @@ function LandingPage() {
           <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-sanor-pink to-sanor-purple p-12 md:p-16 text-center">
             <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-3xl" />
-            
+
             <div className="relative z-10">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Ready to Transform Your Wardrobe?
@@ -330,12 +331,12 @@ function LandingPage() {
 }
 
 // ==================== HOME PAGE (Logged In) ====================
-function LoggedInHomePage({ 
-  products, 
-  categories, 
-  loading, 
+function LoggedInHomePage({
+  products,
+  categories,
+  loading,
   addingToCart,
-  onAddToCart 
+  onAddToCart
 }: {
   products: Product[]
   categories: Category[]
@@ -365,36 +366,7 @@ function LoggedInHomePage({
       {/* Hero Banner */}
       <section className="pt-24 pb-6 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-sanor-pink to-sanor-purple p-8 md:p-12">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-3xl" />
-            
-            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
-              <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/20 rounded-full mb-4">
-                  <Sparkles size={14} className="text-white" />
-                  <span className="text-sm text-white">Limited Time Offer</span>
-                </div>
-                <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
-                  Summer Sale
-                  <span className="block">Up to 50% Off</span>
-                </h1>
-                <p className="text-white/90 mb-6 max-w-md">
-                  Discover amazing deals on sarees, kurtis, jeans & more!
-                </p>
-                <Link href="/shop" className="inline-block px-8 py-3 bg-white text-sanor-black rounded-full font-semibold hover:bg-sanor-black hover:text-white transition-all">
-                  Shop Now
-                </Link>
-              </div>
-              <div className="hidden md:block">
-                <img 
-                  src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&h=300&fit=crop" 
-                  alt="Fashion" 
-                  className="rounded-2xl shadow-2xl"
-                />
-              </div>
-            </div>
-          </div>
+          <HeroCarousel />
         </div>
       </section>
 
@@ -408,13 +380,13 @@ function LoggedInHomePage({
               { icon: Percent, text: 'Best Offers', sub: 'Daily Deals' },
               { icon: Clock, text: 'Easy Returns', sub: '7 Days' },
             ].map((item, i) => (
-              <div key={i} className="flex items-center gap-3 bg-white rounded-xl p-4 shadow-sm">
-                <div className="p-2 rounded-lg bg-sanor-pink-soft">
-                  <item.icon size={20} className="text-sanor-pink" />
+              <div key={i} className="flex items-center gap-3 bg-sanor-purple rounded-xl p-4 shadow-sm border border-white/10">
+                <div className="p-2 rounded-lg bg-white/10 backdrop-blur-sm">
+                  <item.icon size={20} className="text-white" />
                 </div>
                 <div>
-                  <p className="font-medium text-sanor-black text-sm">{item.text}</p>
-                  <p className="text-xs text-gray-500">{item.sub}</p>
+                  <p className="font-medium text-white text-sm">{item.text}</p>
+                  <p className="text-xs text-white/70">{item.sub}</p>
                 </div>
               </div>
             ))}
@@ -448,7 +420,7 @@ function LoggedInHomePage({
                 'ethnic-wear': 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400&h=400&fit=crop',
               }
               const imageUrl = category.imageUrl || fallbackImages[category.slug] || `https://picsum.photos/400/400?random=${index}`
-              
+
               return (
                 <Link
                   key={category.id}
@@ -500,9 +472,9 @@ function LoggedInHomePage({
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {featuredProducts.slice(0, 4).map((product) => (
-                <ProductCard 
-                  key={product.id} 
-                  product={product} 
+                <ProductCard
+                  key={product.id}
+                  product={product}
                   onAddToCart={onAddToCart}
                   addingToCart={addingToCart}
                 />
@@ -516,11 +488,11 @@ function LoggedInHomePage({
       <section className="py-6 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="relative overflow-hidden rounded-2xl bg-sanor-pink p-6 md:p-8">
+            <div className="relative overflow-hidden rounded-2xl bg-sanor-purple p-6 md:p-8">
               <div className="relative z-10">
                 <span className="text-white/80 text-sm">New Arrivals</span>
                 <h3 className="text-2xl font-bold text-white mt-1 mb-3">Fresh Styles Just Dropped</h3>
-                <Link href="/shop" className="inline-block px-6 py-2 bg-white text-sanor-pink rounded-full text-sm font-medium hover:bg-sanor-black hover:text-white transition-all">
+                <Link href="/shop" className="inline-block px-6 py-2 bg-white text-sanor-purple rounded-full text-sm font-medium hover:bg-sanor-black hover:text-white transition-all">
                   Explore
                 </Link>
               </div>
@@ -560,9 +532,9 @@ function LoggedInHomePage({
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {newArrivals.map((product) => (
-                <ProductCard 
-                  key={product.id} 
-                  product={product} 
+                <ProductCard
+                  key={product.id}
+                  product={product}
                   onAddToCart={onAddToCart}
                   addingToCart={addingToCart}
                 />
@@ -593,9 +565,9 @@ function LoggedInHomePage({
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {saleProducts.map((product) => (
-                <ProductCard 
-                  key={product.id} 
-                  product={product} 
+                <ProductCard
+                  key={product.id}
+                  product={product}
                   onAddToCart={onAddToCart}
                   addingToCart={addingToCart}
                 />
@@ -617,9 +589,9 @@ function LoggedInHomePage({
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {products.slice(0, 8).map((product) => (
-              <ProductCard 
-                key={product.id} 
-                product={product} 
+              <ProductCard
+                key={product.id}
+                product={product}
                 onAddToCart={onAddToCart}
                 addingToCart={addingToCart}
               />
@@ -688,11 +660,11 @@ function LoggedInHomePage({
 }
 
 // ==================== PRODUCT CARD COMPONENT ====================
-function ProductCard({ 
-  product, 
-  onAddToCart, 
-  addingToCart 
-}: { 
+function ProductCard({
+  product,
+  onAddToCart,
+  addingToCart
+}: {
   product: Product
   onAddToCart: (product: Product) => void
   addingToCart: number | null

@@ -13,8 +13,8 @@ const config: Config = {
           pink: '#FF69B4',
           'pink-light': '#FFB6C1',
           'pink-soft': '#FFC0CB',
-          purple: '#9B59B6',
-          'purple-light': '#D8BFD8',
+          purple: '#660033', // Burgundy
+          'purple-light': '#900048', // Lighter burgundy/magenta
           'purple-soft': '#E6E6FA',
           black: '#1A1A1A',
           white: '#FFFFFF',
