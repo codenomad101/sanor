@@ -15,8 +15,8 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-  const [seedMessage, setSeedMessage] = useState('')
-  
+
+
   const { login, register } = useAuth()
   const router = useRouter()
 
@@ -38,15 +38,7 @@ export default function LoginPage() {
     setLoading(false)
   }
 
-  const handleSeed = async () => {
-    try {
-      setSeedMessage('Seeding...')
-      const result = await authApi.seed()
-      setSeedMessage(result.results.join(', '))
-    } catch (err: any) {
-      setSeedMessage('Seed failed: ' + err.message)
-    }
-  }
+
 
   return (
     <div className="min-h-screen flex items-center justify-center px-6 py-20 bg-gradient-to-br from-sanor-pink-soft/30 via-white to-sanor-purple-soft/30">
@@ -153,23 +145,7 @@ export default function LoginPage() {
             </p>
           </div>
 
-          {/* Demo credentials */}
-          <div className="mt-8 p-4 bg-sanor-purple-soft/30 rounded-xl">
-            <p className="text-sm font-medium text-sanor-black mb-2">Demo Credentials:</p>
-            <div className="text-xs text-gray-600 space-y-1">
-              <p><strong>User:</strong> user@sanor.com / user123</p>
-              <p><strong>Admin:</strong> admin@sanor.com / admin123</p>
-            </div>
-            <button
-              onClick={handleSeed}
-              className="mt-3 text-xs text-sanor-purple hover:underline"
-            >
-              Click here to seed demo users
-            </button>
-            {seedMessage && (
-              <p className="mt-2 text-xs text-gray-600">{seedMessage}</p>
-            )}
-          </div>
+
         </div>
       </div>
     </div>

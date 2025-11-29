@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"npm run dev:next\" \"npm run dev:server\"",
-    "dev:next": "next dev",
-    "dev:server": "tsx watch server/index.ts",
+    "dev": "PORT=3000 tsx watch server/index.ts",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production PORT=3000 tsx server/index.ts",
     "lint": "next lint",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
