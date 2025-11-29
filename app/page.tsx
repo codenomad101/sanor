@@ -106,13 +106,13 @@ function LandingPage() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-sanor-pink-soft rounded-full blur-3xl opacity-60" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-sanor-purple-soft rounded-full blur-3xl opacity-60" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-sanor-purple-soft rounded-full blur-3xl opacity-60" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-sanor-pink-light/30 to-sanor-purple-light/30 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-sanor-purple-light/30 to-sanor-purple-light/30 rounded-full blur-3xl" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 rounded-full mb-8 shadow-sm">
-            <Sparkles size={16} className="text-sanor-pink" />
+            <Sparkles size={16} className="text-sanor-purple" />
             <span className="text-sm text-sanor-black">New Collection 2025</span>
           </div>
 
@@ -141,12 +141,12 @@ function LandingPage() {
               <p className="text-3xl font-bold gradient-text">500+</p>
               <p className="text-gray-500 text-sm">Unique Styles</p>
             </div>
-            <div className="w-px h-12 bg-sanor-pink-light" />
+            <div className="w-px h-12 bg-sanor-purple-light" />
             <div className="text-center">
               <p className="text-3xl font-bold gradient-text">50k+</p>
               <p className="text-gray-500 text-sm">Happy Customers</p>
             </div>
-            <div className="w-px h-12 bg-sanor-pink-light" />
+            <div className="w-px h-12 bg-sanor-purple-light" />
             <div className="text-center">
               <p className="text-3xl font-bold gradient-text">4.9</p>
               <p className="text-gray-500 text-sm">Rating</p>
@@ -160,8 +160,8 @@ function LandingPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-sanor-pink-soft flex items-center justify-center">
-                <Truck size={28} className="text-sanor-pink" />
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-sanor-purple-soft flex items-center justify-center">
+                <Truck size={28} className="text-sanor-purple" />
               </div>
               <h3 className="font-semibold text-sanor-black mb-2">Free Shipping</h3>
               <p className="text-gray-500 text-sm">On orders above ₹999</p>
@@ -174,8 +174,8 @@ function LandingPage() {
               <p className="text-gray-500 text-sm">100% secure checkout</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-sanor-pink-soft flex items-center justify-center">
-                <Percent size={28} className="text-sanor-pink" />
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-sanor-purple-soft flex items-center justify-center">
+                <Percent size={28} className="text-sanor-purple" />
               </div>
               <h3 className="font-semibold text-sanor-black mb-2">Best Offers</h3>
               <p className="text-gray-500 text-sm">Up to 50% off daily</p>
@@ -249,7 +249,7 @@ function LandingPage() {
               <div key={index} className="glass rounded-2xl p-8">
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} size={18} className="fill-sanor-pink text-sanor-pink" />
+                    <Star key={i} size={18} className="fill-sanor-purple text-sanor-purple" />
                   ))}
                 </div>
                 <p className="text-gray-700 mb-6">&ldquo;{review.text}&rdquo;</p>
@@ -263,7 +263,7 @@ function LandingPage() {
       {/* CTA */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-sanor-pink to-sanor-purple p-12 md:p-16 text-center">
+          <div className="relative overflow-hidden rounded-3xl bg-sanor-purple p-12 md:p-16 text-center">
             <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-3xl" />
 
@@ -296,27 +296,27 @@ function LandingPage() {
             <div>
               <h4 className="font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-gray-400 text-sm">
-                <li><Link href="/login" className="hover:text-sanor-pink transition-colors">Login</Link></li>
-                <li><Link href="/login" className="hover:text-sanor-pink transition-colors">Register</Link></li>
-                <li><a href="#" className="hover:text-sanor-pink transition-colors">About Us</a></li>
+                <li><Link href="/login" className="hover:text-sanor-purple transition-colors">Login</Link></li>
+                <li><Link href="/login" className="hover:text-sanor-purple transition-colors">Register</Link></li>
+                <li><a href="#" className="hover:text-sanor-purple transition-colors">About Us</a></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-gray-400 text-sm">
-                <li><a href="#" className="hover:text-sanor-pink transition-colors">Contact Us</a></li>
-                <li><a href="#" className="hover:text-sanor-pink transition-colors">FAQs</a></li>
-                <li><a href="#" className="hover:text-sanor-pink transition-colors">Shipping</a></li>
+                <li><a href="#" className="hover:text-sanor-purple transition-colors">Contact Us</a></li>
+                <li><a href="#" className="hover:text-sanor-purple transition-colors">FAQs</a></li>
+                <li><a href="#" className="hover:text-sanor-purple transition-colors">Shipping</a></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-semibold mb-4">Legal</h4>
               <ul className="space-y-2 text-gray-400 text-sm">
-                <li><a href="#" className="hover:text-sanor-pink transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-sanor-pink transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-sanor-pink transition-colors">Returns Policy</a></li>
+                <li><a href="#" className="hover:text-sanor-purple transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-sanor-purple transition-colors">Terms of Service</a></li>
+                <li><a href="#" className="hover:text-sanor-purple transition-colors">Returns Policy</a></li>
               </ul>
             </div>
           </div>
@@ -360,7 +360,7 @@ function LoggedInHomePage({
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-sanor-pink-soft/10 to-sanor-purple-soft/20">
+    <div className="min-h-screen bg-gradient-to-b from-white via-sanor-purple-soft/10 to-sanor-purple-soft/20">
       <Navbar />
 
       {/* Hero Banner */}
@@ -373,7 +373,7 @@ function LoggedInHomePage({
       {/* Quick Features */}
       <section className="py-6 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { icon: Truck, text: 'Free Shipping', sub: 'Above ₹999' },
               { icon: Shield, text: 'Secure Payment', sub: '100% Safe' },
@@ -404,7 +404,7 @@ function LoggedInHomePage({
             </Link>
           </div>
 
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4">
             {categories.slice(0, 6).map((category, index) => {
               // Fallback images for each category
               const fallbackImages: Record<string, string> = {
@@ -624,7 +624,7 @@ function LoggedInHomePage({
               <ul className="space-y-2 text-gray-400 text-sm">
                 {categories.slice(0, 4).map(cat => (
                   <li key={cat.id}>
-                    <Link href="/shop" className="hover:text-sanor-pink transition-colors">{cat.name}</Link>
+                    <Link href="/shop" className="hover:text-sanor-purple transition-colors">{cat.name}</Link>
                   </li>
                 ))}
               </ul>
@@ -633,19 +633,19 @@ function LoggedInHomePage({
             <div>
               <h4 className="font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-gray-400 text-sm">
-                <li><a href="#" className="hover:text-sanor-pink transition-colors">Contact Us</a></li>
-                <li><a href="#" className="hover:text-sanor-pink transition-colors">FAQs</a></li>
-                <li><a href="#" className="hover:text-sanor-pink transition-colors">Shipping</a></li>
-                <li><a href="#" className="hover:text-sanor-pink transition-colors">Returns</a></li>
+                <li><a href="#" className="hover:text-sanor-purple transition-colors">Contact Us</a></li>
+                <li><a href="#" className="hover:text-sanor-purple transition-colors">FAQs</a></li>
+                <li><a href="#" className="hover:text-sanor-purple transition-colors">Shipping</a></li>
+                <li><a href="#" className="hover:text-sanor-purple transition-colors">Returns</a></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-semibold mb-4">Account</h4>
               <ul className="space-y-2 text-gray-400 text-sm">
-                <li><Link href="/orders" className="hover:text-sanor-pink transition-colors">My Orders</Link></li>
-                <li><Link href="/cart" className="hover:text-sanor-pink transition-colors">Cart</Link></li>
-                <li><a href="#" className="hover:text-sanor-pink transition-colors">Wishlist</a></li>
+                <li><Link href="/orders" className="hover:text-sanor-purple transition-colors">My Orders</Link></li>
+                <li><Link href="/cart" className="hover:text-sanor-purple transition-colors">Cart</Link></li>
+                <li><a href="#" className="hover:text-sanor-purple transition-colors">Wishlist</a></li>
               </ul>
             </div>
           </div>
@@ -681,7 +681,7 @@ function ProductCard({
         {/* Badges */}
         <div className="absolute top-3 left-3 flex flex-col gap-2">
           {product.newArrival && (
-            <span className="px-2 py-1 bg-sanor-pink text-white text-xs rounded-full">NEW</span>
+            <span className="px-2 py-1 bg-sanor-purple text-white text-xs rounded-full">NEW</span>
           )}
           {product.originalPrice && (
             <span className="px-2 py-1 bg-red-500 text-white text-xs rounded-full">
@@ -692,7 +692,7 @@ function ProductCard({
 
         {/* Quick Actions */}
         <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-          <button className="p-2 bg-white rounded-full shadow-lg hover:bg-sanor-pink-soft transition-colors">
+          <button className="p-2 bg-white rounded-full shadow-lg hover:bg-sanor-purple-soft transition-colors">
             <Heart size={16} className="text-sanor-black" />
           </button>
         </div>
