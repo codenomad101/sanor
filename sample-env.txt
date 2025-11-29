@@ -1,0 +1,19 @@
+# Copy this file to .env and update with your values
+
+# Database (PostgreSQL)
+DATABASE_URL=postgresql://username:password@localhost:5432/sanor
+
+# Session Secret (for JWT)
+SESSION_SECRET=your-super-secret-session-key-change-this
+
+# Server Port (optional, defaults to 3001)
+PORT=3001
+
+# Razorpay (for payments)
+# Get your keys from: https://dashboard.razorpay.com/app/keys
+RAZORPAY_KEY_ID=rzp_test_xxxxxxxxxxxxx
+RAZORPAY_KEY_SECRET=your-razorpay-secret-key
+
+# Demo Users (seeded via POST /api/seed)
+# user@sanor.com / user123
+# admin@sanor.com / admin123
